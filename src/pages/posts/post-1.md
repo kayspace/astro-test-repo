@@ -9,9 +9,11 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 ---
 
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+<nav>
+  <a href="/">Home</a>
+  <a href="/about/">About</a>
+  <a href="/blog/">Blog</a>
+</nav>
 
 # My First Blog Post
 

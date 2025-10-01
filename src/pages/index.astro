@@ -1,5 +1,8 @@
 ---
+import "../styles/global.css";
+
 const pageTitle = "Home Page";
+const myTitle = "Developer & Learner";
 ---
 
 <html lang="en">
@@ -9,12 +12,27 @@ const pageTitle = "Home Page";
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+
+		<style>
+			.hero-desc {
+				text-transform: lowercase;
+			}
+		</style>
+
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/blog/">Blog</a>
+    </nav>
 
-    <h1>{pageTitle}</h1>
+    <h1>{myTitle}</h1>
+    <p class="hero-desc">
+      I CREATE DIGITAL EXPERIENCES THAT COMBINE CLEAN CODE (I THINK I
+      FIRST MAKE IT WORK, THEN CLEAN IT AFTER LOL ◑﹏◐ WITH THOUGHTFUL DESIGN.
+      CURRENTLY LEARNING & STRIVING IN THE DIRECTION OF FULL STACK. WELL, BY THE
+      WAY I USE AI TOO, CUZ WHY NOT ⚆_⚆!
+    </p>
   </body>
 </html>
