@@ -1,5 +1,7 @@
 ---
 import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
 const pageTitle = "Home Page";
 const myTitle = "Developer & Learner";
@@ -13,26 +15,27 @@ const myTitle = "Developer & Learner";
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
 
-		<style>
-			.hero-desc {
-				text-transform: lowercase;
-			}
-		</style>
-
+    <style>
+      .hero-desc {
+        text-transform: lowercase;
+      }
+    </style>
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/about/">About</a>
-      <a href="/blog/">Blog</a>
-    </nav>
+    <Header />
 
     <h1>{myTitle}</h1>
     <p class="hero-desc">
-      I CREATE DIGITAL EXPERIENCES THAT COMBINE CLEAN CODE (I THINK I
-      FIRST MAKE IT WORK, THEN CLEAN IT AFTER LOL ◑﹏◐ WITH THOUGHTFUL DESIGN.
-      CURRENTLY LEARNING & STRIVING IN THE DIRECTION OF FULL STACK. WELL, BY THE
-      WAY I USE AI TOO, CUZ WHY NOT ⚆_⚆!
+      I CREATE DIGITAL EXPERIENCES THAT COMBINE CLEAN CODE (I THINK I FIRST MAKE
+      IT WORK, THEN CLEAN IT AFTER LOL ◑﹏◐ WITH THOUGHTFUL DESIGN. CURRENTLY
+      LEARNING & STRIVING IN THE DIRECTION OF FULL STACK. WELL, BY THE WAY I USE
+      AI TOO, CUZ WHY NOT ⚆_⚆!
     </p>
+
+    <Footer />
+
+    <script>
+			import '../scripts/menu'
+		</script>
   </body>
 </html>
