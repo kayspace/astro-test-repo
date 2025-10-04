@@ -7,6 +7,10 @@ const allPosts = Object.values(
 );
 // console.log(allPosts[0].frontmatter)
 
+const tags = [
+  ...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat()),
+];
+
 const pageTitle = "My Astro Learning Blog";
 ---
 
@@ -14,10 +18,39 @@ const pageTitle = "My Astro Learning Blog";
   ul {
     padding: 0;
   }
+
+  .tags-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tags {
+    padding: 3px 7px;
+    background-color: #f9c4d7;
+    border-radius: 10px;
+  }
+
+  .tags a {
+    text-decoration: none;
+  }
 </style>
 
 <BaseLayout pageTitle={pageTitle}>
   <p>This is where I will post about my journey learning Astro.</p>
+
+  <p>tags related :</p>
+
+  <div class="tags-wrapper">
+    {
+      tags.map((tag) => (
+        <p class="tags">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div>
+
   <ul>
     {
       allPosts.map((post: any) => (

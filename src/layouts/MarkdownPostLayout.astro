@@ -3,8 +3,38 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 
+<style>
+  .tags-wrapper {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tags {
+    padding: 3px 7px;
+    background-color: #f9c4d7;
+    border-radius: 10px;
+  }
+
+  .tags a {
+    text-decoration: none;
+  }
+</style>
+
 <BaseLayout pageTitle={frontmatter.title}>
   <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
   <p>Written by {frontmatter.author}</p>
+
+  <div class="tags-wrapper">tags: 
+    {
+      frontmatter.tags.map((tag: string) => (
+        <p class="tags">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
+  </div>
+
   <slot />
 </BaseLayout>
